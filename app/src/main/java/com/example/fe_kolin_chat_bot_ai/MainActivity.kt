@@ -13,12 +13,14 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.lifecycle.ViewModelProvider
 import com.example.fe_kolin_chat_bot_ai.ui.theme.FE_Kolin_Chat_Bot_AITheme
+import com.google.firebase.FirebaseApp
 
 class MainActivity : ComponentActivity() {
     @RequiresApi(Build.VERSION_CODES.VANILLA_ICE_CREAM)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        FirebaseApp.initializeApp(this)
         val chatViewModel = ViewModelProvider(this)[screenChatModelView::class.java]
         setContent {
             FE_Kolin_Chat_Bot_AITheme {
